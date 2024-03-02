@@ -1,0 +1,608 @@
+// if you interpret this as C in vsCode it's easier to work with
+
+// Keywords
+bool 
+break
+--case 
+class 
+char 
+cin 
+cout 
+--default 
+else 
+false 
+for 
+if 
+int 
+new 
+null 
+public 
+private 
+return 
+string 
+--switch 
+this 
+true 
+void 
+while
+
+// Punctuation
+; 
+{   
+} 
+(     
+) 
+[     
+] 
+= 
+== 
+!= 
+>= 
+<= 
+> 
+< 
+&& 
+|| 
+! 
++ 
+- 
+* 
+/ 
++= 
+-= 
+*= 
+/= 
+<< 
+>> 
+. 
+, 
+--
+:
+
+// Identifier   ::= (<alpha> | _) (<alpha> | <digit> | _)*
+a
+A
+z
+Z
+_
+
+a_z
+A_s
+z_d
+Z_f
+__a
+
+// mixing in keywords with an ID
+_int
+int_
+this_int
+newInt
+
+// unesc-char   ::= " " to "~" excluding """, "'", "\" 
+// escaped-char ::= \[\rtn]
+// char         ::= <unescaped-char> | <escaped-char>
+// charlit      ::= '(<char> | \')'
+// 32
+' '
+// 33
+'!'
+// 34
+// '"'
+// 35
+'#'
+// 36
+'$'
+// 37
+'%'
+// 38
+'&'
+// 39
+// '''
+// 40
+'('
+// 41
+')'
+// 42
+'*'
+// 43
+'+'
+// 44
+','
+// 45
+'-'
+// 46
+'.'
+// 47
+'/'
+// 48
+'0'
+// 49
+'1'
+// 50
+'2'
+// 51
+'3'
+// 52
+'4'
+// 53
+'5'
+// 54
+'6'
+// 55
+'7'
+// 56
+'8'
+// 57
+'9'
+// 58
+':'
+// 59
+';'
+// 60
+'<'
+// 61
+'='
+// 62
+'>'
+// 63
+'?'
+// 64
+'@'
+// 65
+'A'
+// 66
+'B'
+// 67
+'C'
+// 68
+'D'
+// 69
+'E'
+// 70
+'F'
+// 71
+'G'
+// 72
+'H'
+// 73
+'I'
+// 74
+'J'
+// 75
+'K'
+// 76
+'L'
+// 77
+'M'
+// 78
+'N'
+// 79
+'O'
+// 80
+'P'
+// 81
+'Q'
+// 82
+'R'
+// 83
+'S'
+// 84
+'T'
+// 85
+'U'
+// 86
+'V'
+// 87
+'W'
+// 88
+'X'
+// 89
+'Y'
+// 90
+'Z'
+// 91
+'['
+// 92
+// '\'
+// 93
+']'
+// 94
+'^'
+// 95
+'_'
+// 96
+'`'
+// 97
+'a'
+// 98
+'b'
+// 99
+'c'
+// 100
+'d'
+// 101
+'e'
+// 102
+'f'
+// 103
+'g'
+// 104
+'h'
+// 105
+'i'
+// 106
+'j'
+// 107
+'k'
+// 108
+'l'
+// 109
+'m'
+// 110
+'n'
+// 111
+'o'
+// 112
+'p'
+// 113
+'q'
+// 114
+'r'
+// 115
+'s'
+// 116
+'t'
+// 117
+'u'
+// 118
+'v'
+// 119
+'w'
+// 120
+'x'
+// 121
+'y'
+// 122
+'z'
+// 123
+'{'
+// 124
+'|'
+// 125
+'}'
+// 126
+'~'
+
+// \r
+'\r'
+// \t
+'\t'
+// \n
+'\n'
+
+// \'
+'\''
+
+// stringlit    ::= "(<char> | \")*"
+// 32
+" "
+// 33
+"!"
+// 34
+// """
+// 35
+"#"
+// 36
+"$"
+// 37
+"%"
+// 38
+"&"
+// 39
+// "'"
+// 40
+"("
+// 41
+")"
+// 42
+"*"
+// 43
+"+"
+// 44
+","
+// 45
+"-"
+// 46
+"."
+// 47
+"/"
+// 48
+"0"
+// 49
+"1"
+// 50
+"2"
+// 51
+"3"
+// 52
+"4"
+// 53
+"5"
+// 54
+"6"
+// 55
+"7"
+// 56
+"8"
+// 57
+"9"
+// 58
+":"
+// 59
+";"
+// 60
+"<"
+// 61
+"="
+// 62
+">"
+// 63
+"?"
+// 64
+"@"
+// 65
+"A"
+// 66
+"B"
+// 67
+"C"
+// 68
+"D"
+// 69
+"E"
+// 70
+"F"
+// 71
+"G"
+// 72
+"H"
+// 73
+"I"
+// 74
+"J"
+// 75
+"K"
+// 76
+"L"
+// 77
+"M"
+// 78
+"N"
+// 79
+"O"
+// 80
+"P"
+// 81
+"Q"
+// 82
+"R"
+// 83
+"S"
+// 84
+"T"
+// 85
+"U"
+// 86
+"V"
+// 87
+"W"
+// 88
+"X"
+// 89
+"Y"
+// 90
+"Z"
+// 91
+"["
+// 92
+// "\"
+// 93
+"]"
+// 94
+"^"
+// 95
+"_"
+// 96
+"`"
+// 97
+"a"
+// 98
+"b"
+// 99
+"c"
+// 100
+"d"
+// 101
+"e"
+// 102
+"f"
+// 103
+"g"
+// 104
+"h"
+// 105
+"i"
+// 106
+"j"
+// 107
+"k"
+// 108
+"l"
+// 109
+"m"
+// 110
+"n"
+// 111
+"o"
+// 112
+"p"
+// 113
+"q"
+// 114
+"r"
+// 115
+"s"
+// 116
+"t"
+// 117
+"u"
+// 118
+"v"
+// 119
+"w"
+// 120
+"x"
+// 121
+"y"
+// 122
+"z"
+// 123
+"{"
+// 124
+"|"
+// 125
+"}"
+// 126
+"~"
+
+"\r"
+"\n"
+"\t"
+
+"\""
+
+"eJg5=H=DOpH=M9/iXQ5K"
+"pnk_H%OU<9\rj74+9&iVR"
+"b`){`\n?;C@^vc<@$XK?7"
+" 7& Y)_b\rQfjJ-`qVpeZ"
+"Yf@hRX47tzOUztu?N&{i"
+"u30l_:a]=t#\n:>a]TB5K"
+"RG].^!<s75J\n&n01:\tTj"
+"29/LHSiK*p$Yk^E@ZPhq"
+"SI8)e^oP1 K~Y>vYj 4R"
+"5[1-.F6#w$`%.>X(zKh*"
+"KklX^()W\rfWtDBf;)7S0"
+"lRkOx~e;$!d<t$D&+\n!\""
+"=2QL+Ku^l=\twT2)@\rBgr"
+"UIpLoJ?eTTJnriTlP]=u"
+"%Dr>-$ii/D=%wi?)E\tZ%"
+"{O37 &G`G-Xp0Ilc5\ny]"
+"8|5%eVWW*,4Vep:dk%U4"
+"J@GfKg+y(\t/E&Zb~J]]J"
+"VTxY3x\tS IbEV\n{?x*LY"
+"<V#xQphL?VYA<R^zo\r;~"
+"no]{~HTCOy*E~DFF;G;d"
+"0C6,;e(e-`!$\"{h/\"H0H"
+"@8>SdJc~7s\tf6C6NK&&N"
+"\r&bOy]o3V7K\"Yj64L}Vb"
+"KRa_ Ohe}5S/*KtDAV%7"
+",t}?* @die\n#C<vY\"w3W"
+"0?/?l~;\nIf6Re\r<:{.oX"
+"YpOJh@?f+m\rtw4<+wnCz"
+"V#gqtgn?af^>I==5# {O"
+"!Bldd9 2|].SOkB,l&#Q"
+"xc\t7m#NRB|\tII[piAOV+"
+"\"YUN^x8Yjcu_|*Lur\rNG"
+"m/QQ1qZ#]\nH>L+70!rsJ"
+".Y]G>o%4O]utJ4UvC|W7"
+"rWTfNF2G|<2V7._^~\rKN"
+"yP&!)\tEE6#SF~m1n6igC"
+"K&OV:ly.Xd\n^f?a\nY/jL"
+"yTzi,x$rR<-E+Rf09LD["
+"Sw5=kaV03V]heJF\rvF>7"
+"=ZA5t5`+?>~e*5$7WXya"
+"xmCo\t^cl+3Y\n6Yn4Cd B"
+"[%w`r7?+2>QN]r\n/>xdQ"
+"s?-ahykhVi$PFQL74$F>"
+"91sj7N&-Hyf;KLn\"%}gx"
+"AYNd8T7P}g4+Jn^lY\rB?"
+"\n0bI\n9<|9ijeq8&IY[8)"
+"[,]!r`U`2xbJF2e-1oVf"
+"SgQ<?vfXk}^\rz-ZqF,K5"
+"ry&>RW\rgQQCj\"/|_jm#+"
+">q*+<J\t%0<Ec2io\r>PGi"
+"YY@Mua-yVX3jE/13\ry2~"
+"?:i_{;z6&.Jav[Np}7C["
+"@]*~?Y);D=rlk6$>+ Lm"
+"];_nb*(8f&_#>NH:YZMS"
+"h&gj3;^\rR?sLz;XyKO/\""
+"~6 #jFm+^`%x\"U!kK:\tu"
+"3]kLT 3owf;8h|TZk2J>"
+"&^sg+M_9S.a@AHD})HQX"
+"{w\txlF7z/B\r0ysz?nN(@"
+"a%M%gF;\taotZK6!3x_6$"
+"5.x.k|]\n`/VsRz*E|+OK"
+"HKls,q/t}(RC;O>92xq4"
+":ZY8,:<o+~gprv_0UI0w"
+"kGUC+j;bK3!wj}i[3$~o"
+"{l4GPL<w;LO|&n{~{G]]"
+",(`}K6\")&uR@ j]HnYU "
+"`w!`<+E{bX6@* )^45fN"
+";-*y:DUfz[6]^6]g5\rq>"
+"\tl&]a3CI6*!jU?~uOQlM"
+"[nThB;8#{\tLe4Jv&jeyT"
+"3WkSyXZ=V#Dq8([)?4af"
+"kv*!6I!xuc3PbVPp;:w>"
+"}Y~R|=-SS8XRp*K>~O[~"
+"a5chyDt5%\"2nkak\"7.5b"
+"Mv)DBGE~Lw]]VSGb`$zT"
+"]pI6M7!YuP$TcWy\nlg_B"
+"x:%T>!Ud8WiWPJ/dtuu}"
+"+\n^J,ly\tfhNco01r3u5\n"
+"}dv:Yz$U@{#W >\r~;I\nI"
+"_t;_K?2?7~R,UCWn(m[F"
+"U{L\nemta] m7) luxM-C"
+"~I5\n.|/<0x<I<QOtY+3h"
+"yraVHV(tioW\r!^GQ9yjv"
+"wFFYu=DYd9FyYc|2E:;;"
+",dmis)s;ypR\tPEhQ,xpv"
+"~|DI{VQc_c3!\r\nmz%ykr"
+"sk\nO#v\"8fH~(*,L\n[5G\r"
+"G]3+Q~u<{NM:hwV+Mq?g"
+"_%~]aBg {UKuV]Qo/itA"
+"\"UXnE=~*nuKtH]P01oxx"
+"i7aRLo7&]o)7j, syl\nr"
+"Q1oM{RZG0u4ja\r0+\rk()"
+"\t>Rmt8+X$CJ!h( 6w~T2"
+"~iBl06!O9,wyd= {+B\nQ"
+"1zsmJTh@RUEvTENIt{P-"
+"l<x\n 2bu{Zm`wjho},2f"
+"eC)P7U9kd\tc[{)fL|JF\t"
+"GaFoS\"_&&n/T+`arX:fg"
+"L-]XOlHe=W(Z.By4gAL+"
+"wK$;=hGQ+X4xHr@0vW9y"
+
+// num_lit
+317
+744
+435
+530
+720
+920
+228
+871
+619
+725
+239
+756
+320
+542
+851
+763
+323
+83
+13
+
+// comment
+// comment // comment // comment
+//
