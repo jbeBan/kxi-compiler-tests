@@ -1,0 +1,240 @@
+
+// class <identifier> { <ClassMemberDefinition>* }
+class A {
+
+    // DataMemberDeclaration  ::= static? <Modifier> <VariableDeclaration>
+    // VariableDeclaration    ::= <Type> <identifier> <Initializer>? ;
+    static public int x;
+    public int [] y;
+    private int z;
+    // Initializer            ::= `=` <Expression>
+    public int x = 0;
+    private int [] y = new int[10];
+    public int z = x + y[0];
+
+    // MethodDeclaration      ::= static? <Modifier> <Type> <MethodSuffix>
+    static public int foo() {
+        if (true) {
+            return 0;
+        } else {
+            return 1;
+        }
+    }
+    public int bar() {}
+    // MethodSuffix           ::= <identifier> `(` <ParameterList>? `)` <Block>
+    // ParameterList          ::= <Parameter> (, <Parameter>)*
+    // Parameter              ::= <Type> <identifier>
+    static public int foo(int x, int y) {}
+    public int bar(int [] x, int [] y) {}
+
+    // ConstructorDeclaration ::= <MethodSuffix>
+    A() {}
+
+}
+
+class B {}
+
+class C {}
+
+class Message {
+
+    private string message = "Hello, World!";
+    
+    static public void print(string message) {
+        cout << message;
+    }
+
+    public void print_message() {
+        this.print(this.message);
+    }
+
+    public string get_message() {
+        return this.message;
+    }   
+
+    public void set_message(string message) {
+        this.message = message;
+    }    
+
+}
+
+// A bunch of stuff that only exists in main (block ::= statements)
+void main() {
+
+    // if `(` <Expression> `)` <Statement> (else <Statement>)?
+    if (true) {
+        // <Statement>
+    }
+    
+    if (true) {
+        // <Statement>
+    } else {
+        // <Statement>
+    }
+
+    if (true) {
+        // <Statement>
+    } else if (true) {
+        // <Statement>
+    } else {
+        // <Statement>
+    }
+        
+    // while `(` <Expression> `)` <Statement>
+    while (true) {
+        // <Statement>
+    }
+    while (true) {
+        while (true) {
+            // <Statement>
+        }
+    }
+    
+    // for `(` <Expression>? ; <Expression> ; <Expression>? `)` <Statement>
+    int i = 0;
+    for (i = 0; i < 10; i = i + 1) {
+        // <Statement>
+    }
+    int j = 0;
+    for (i = 0; i < 10; i = i + 1) {
+        for (j = 0; j < 10; j = j + 1) {
+            // <Statement>
+        }
+    }
+    for ( ; true ; ) {
+        // <Statement>
+    }
+    
+    // return <Expression>? ;
+    return true;
+    return;
+
+    // cout << <Expression> ;
+    cout << true;
+
+    // cin >> <Expression> ;
+    cin >> true;
+
+    // switch `(` <Expression> `)` <CaseBlock>
+    switch ( true ) {
+        case 3 :
+            // <Statement>
+            break;
+        case 4 :
+            // <Statement>
+            break;
+        default : 
+            break ;
+    }
+    
+    // break ;
+    break;
+
+    // <Expression> ;
+    true;
+
+    // <Block>
+    {
+        // <Statement>
+        break;
+    }
+
+    // <VariableDeclaration>
+    int i = 0;
+    string j;
+    char [] k = new char[10];
+    bool l = true;
+
+
+    // Expression             
+    // ::= <Expression> =  <Expression>
+    x = x;
+    // <Expression> += <Expression>
+    x += x;
+    // <Expression> -= <Expression>
+    x -= x;
+    // <Expression> *= <Expression>
+    x *= x;
+    // <Expression> /= <Expression>
+    x /= x;
+    // <Expression> +  <Expression>
+    x + x;
+    // <Expression> -  <Expression>
+    x - x;
+    // <Expression> *  <Expression>
+    x * x;
+    // <Expression> /  <Expression>
+    x / x;
+    // <Expression> == <Expression>
+    x == x;
+    // <Expression> != <Expression>
+    x != x;
+    // <Expression> <  <Expression>
+    x < x;
+    // <Expression> >  <Expression>
+    x > x;
+    // <Expression> <= <Expression>
+    x <= x;
+    // <Expression> >= <Expression>
+    x >= x;
+    // <Expression> && <Expression>
+    x && x;
+    // <Expression> || <Expression>
+    x || x;
+    // ! <Expression>
+    !x;
+    // + <Expression>
+    +x;
+    // - <Expression>
+    -x;
+    // `(` <Expression> `)`
+    (x);
+    // <int-lit>
+    42;
+    // <char-lit>
+    'c';
+    // <string-lit>
+    "string";
+    // true
+    true;
+    // false
+    false;
+    // null
+    null;
+    // this
+    this;
+    // <identifier>
+    identifier;
+    // new Type ( <Arguments> | <Index> )
+    new Type();
+    new Type[10];
+    // <Expression> . <identifier>
+    x.y;
+    // <Expression> <Index>
+    x[10];
+    // <Expression> <Arguments>
+    x();
+
+    int x = x.y;
+    int x = x[10];
+    int x = x(x.y, x.z);
+    int x = x[10](x.y, x.z[2]);
+    
+    Message m = new Message();
+    m.print("Running Program");
+    m.print_message();
+    
+    cout << "Enter a ten chracter message: ";
+    
+    char [] inputMessage = new char[10];
+    
+    int i = 0;
+    for (i = 0; i < 10; i = i + 1) {
+        cin >> inputMessage[i];
+    }
+    
+    m.set_message(inputMessage);
+    
+    m.print_message();
+    
+}
