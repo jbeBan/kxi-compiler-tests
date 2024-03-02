@@ -3,12 +3,12 @@
 // Keywords
 bool 
 break
---case 
+case 
 class 
 char 
 cin 
 cout 
---default 
+default 
 else 
 false 
 for 
@@ -20,7 +20,7 @@ public
 private 
 return 
 string 
---switch 
+switch 
 this 
 true 
 void 
