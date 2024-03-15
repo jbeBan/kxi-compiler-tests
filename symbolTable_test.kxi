@@ -1,0 +1,88 @@
+// Class definitions, method definitions, and blocks of code introduce new scopes. 
+// In other words, curly braces define scopes. 
+// You do not need to implement overloading. 
+// All names (including variables, functions, and class names) are defined in the same primitive namespace. 
+// All names except class names can be shadowed; a name used for a class name in a KXI program may not be used for anything else.
+
+class A {
+
+    public int i = 0;
+    // Error, variable defined twice
+    private string i = "0"; 
+
+    static public void testMethod (int x, string y) {
+        // Error, variable already defined as parameter 
+        int x;
+        int testVar;  
+    }
+
+    // Error: Method Defined Twice
+    public int testMethod() {
+
+    }
+
+    // Error: Parameter Defined Twice
+    private string testMethod_2 (int x, string x) {
+        testMethod_2(3, "3");
+        
+        int testMethod_2 = 3;
+    }
+
+    // Error, member using class name
+    A () {
+        int x;
+    }
+
+    // Error, method name defined twice
+    testMethod() {
+
+    }
+
+    Construct_A() {
+        int x;
+    }
+
+}
+
+// Error: Class Defined Twice
+class A {
+}
+
+void main () {
+    int y;
+    int x;
+    {
+        int x;
+    }
+    { 
+        int x;
+    }
+
+    // Error, variable defined with name of class
+    int A = 3;
+
+    int i;
+    int j;
+    int k;
+    for (i = 0; i < 10; i = i + 1) {
+        i = i + 3;
+        for (j = 0; j < 10; j = j + 1) {
+            j = j + 3;
+            for (k = 0; k < 10; k = k + 1) {
+                k = k + 3;
+                cout << i;
+                cout << j;
+                cout << k;
+            }
+        }
+    }
+    
+    {
+        {
+            {
+                // Error, name of class used
+                int A = 3;
+            }
+        }
+    }
+}
