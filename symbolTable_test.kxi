@@ -8,44 +8,49 @@ class A {
 
     public int i = 0;
     // Error, variable defined twice
-    private string i = "0"; 
+    // private string i = "0"; 
 
     static public void testMethod (int x, string y) {
         // Error, variable already defined as parameter 
-        int x;
+        // int x;
         int testVar;  
     }
 
     // Error: Method Defined Twice
-    public int testMethod() {
-
-    }
+    // public int testMethod() {}
 
     // Error: Parameter Defined Twice
-    private string testMethod_2 (int x, string x) {
+    private string testMethod_2 (
+        // int x, 
+        string x) {
         testMethod_2(3, "3");
         
         int testMethod_2 = 3;
     }
 
-    // Error, member using class name
     A () {
         int x;
     }
 
     // Error, method name defined twice
-    testMethod() {
+    // Also constructor without class name
+    // testMethod() {}
 
-    }
-
-    Construct_A() {
-        int x;
-    }
+    // Error, Constructor defined twice
+    // A() {}
 
 }
 
 // Error: Class Defined Twice
-class A {
+// class A {
+// }
+
+class B {
+    
+    B (int [] x, A [] y) {
+        int [][] z = new int[][10];
+        A [] a = new A[10];
+    }
 }
 
 void main () {
@@ -59,7 +64,7 @@ void main () {
     }
 
     // Error, variable defined with name of class
-    int A = 3;
+    // int A = 3;
 
     int i;
     int j;
@@ -80,8 +85,9 @@ void main () {
     {
         {
             {
+                char c = 'c';
                 // Error, name of class used
-                int A = 3;
+                // int A = 3;
             }
         }
     }
