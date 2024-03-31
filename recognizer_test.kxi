@@ -5,7 +5,8 @@ class A {
     // DataMemberDeclaration  ::= static? <Modifier> <VariableDeclaration>
     // VariableDeclaration    ::= <Type> <identifier> <Initializer>? ;
     static public int x;
-    public int [] y;
+    public int [][][] y;
+
     private int z;
     // Initializer            ::= `=` <Expression>
     public int x = 0;
